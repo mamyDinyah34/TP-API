@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-<<<<<<< HEAD
 use Tymon\JWTAuth\Facades\JWTAuth;
-=======
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
 
 class UserController extends Controller
 {
@@ -44,8 +41,6 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-<<<<<<< HEAD
         //$token = $user->createToken($request->name);
 
         $token = JWTAuth::fromUser($user);
@@ -54,12 +49,6 @@ class UserController extends Controller
             'user' => $user,
             //'token' =>$token->plainTextToken,
             'token' =>$token,
-=======
-        $token = $user->createToken($request->name);
-        return response()->json([
-            'user' => $user,
-            'token' =>$token->plainTextToken,
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
              201
         ]);
     }
@@ -67,7 +56,6 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-<<<<<<< HEAD
     /*public function show(User $user)
     {
         return response()->json($user, 200);
@@ -86,14 +74,6 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
-
-=======
-    public function show(User $user)
-    {
-        return response()->json($user, 200);
-    }
-
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
     /**
      * Update the specified resource in storage.
      */
@@ -104,14 +84,11 @@ class UserController extends Controller
         if (!$user) {
             return response()->json(['message' => 'Utilisateur non trouvé'], 404);
         }
-
-<<<<<<< HEAD
+        
         if (!auth()->check()) {
             return response()->json(['message' => 'Non autorisé'], 401);
         }
 
-=======
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
         $request->validate([
             'name' => 'sometimes|string|max:255',
             'email' => 'sometimes|string|email|max:255|unique:users,email,' . $id,
@@ -136,16 +113,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-<<<<<<< HEAD
     /*public function destroy(User $user)
-=======
     public function destroy(User $user)
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
     {
         $user->delete();
 
         return response()->json(['message' => 'Utilisateur supprimé'], 200);
-<<<<<<< HEAD
     }*/
     public function destroy($id)
     {
@@ -179,17 +152,6 @@ class UserController extends Controller
 
 
         /*$user = User::where('email', $request->email)->first();
-=======
-    }
-
-    public function login(Request $request){
-        $request->validate([
-            'email' => 'required|email|exists:users',
-            'password' => 'required|string',
-        ]);
-
-        $user = User::where('email', $request->email)->first();
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json(['message' => 'Identifiants incorrects'], 401);
@@ -199,8 +161,6 @@ class UserController extends Controller
         return response()->json([
             'user connecté' => $user,
             'token'=>$token->plainTextToken,
-             201
-<<<<<<< HEAD
         ]);*/
     }
 
@@ -208,15 +168,6 @@ class UserController extends Controller
     {
         //$request->user()->tokens()->delete();
         JWTAuth::invalidate(JWTAuth::getToken());
-=======
-        ]);
-    }
-
-    public function logout(Request $request)
-    {
-        $request->user()->tokens()->delete();
->>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
-
         return response()->json(['message' => 'Déconnexion réussie'], 200);
     }
 }
