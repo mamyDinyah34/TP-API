@@ -12,6 +12,7 @@ Route::get('/', function(){
     return 'API';
 });*/
 
+<<<<<<< HEAD
 //Route::apiResource('user', UserController::class);
 
 //Route::post('/login', [UserController::class, 'login']);
@@ -33,3 +34,11 @@ Route::middleware('auth:api')->group(function () {
 
     Route::post('/logout', [UserController::class, 'logout']);
 });
+=======
+Route::apiResource('user', UserController::class);
+
+Route::post('/login', [UserController::class, 'login']);
+
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');;
+
+>>>>>>> 6b3dd9e544b0ce4bf7160fd5ab10dc87b229d8f7
