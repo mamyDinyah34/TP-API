@@ -18,7 +18,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "API de Gestion des Utilisateurs avec Swagger",
+      title: "API de Gestion des Utilisateurs avec Express",
       version: "0.1.0",
       description:
         "Documentation de l\'API pour la gestion des utilisateurs avec Swagger",
