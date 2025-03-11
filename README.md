@@ -15,7 +15,7 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 
 ## Capture d'Écran 📸
 
-| ![laravel](https://github.com/user-attachments/assets/6717c2dd-490b-4cf6-8867-0b18770babf3)| ![express](https://github.com/user-attachments/assets/4811b79f-1884-46cd-a042-abcf4d7a1899) |
+| ![laravel](https://github.com/user-attachments/assets/6717c2dd-490b-4cf6-8867-0b18770babf3) | ![express](https://github.com/user-attachments/assets/4811b79f-1884-46cd-a042-abcf4d7a1899) |
 |---|---|
 | Documentation Swagger pour Laravel | Documentation Swagger pour Express |
 
@@ -35,6 +35,7 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 
 ## Installation 🚀
 
+<<<<<<< HEAD
 ### Étapes d'Installation 🔨
 
 Dans ce projet, vous trouverez trois dossiers : **Laravel**, **Express.js** et **NestJS**. Chaque implémentation a ses propres spécificités.
@@ -85,6 +86,34 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 | **Migrations** | `npx prisma migrate dev` |
 | **Démarrage** | `npm run start:dev` |
 | **Test** | Utilisez Postman ou Thunder Client |
+=======
+### Étapes pour Laravel
+
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/laravel`
+3. **Installez les dépendances** : `composer install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` avec les configurations PostgreSQL
+5. **Migrations** : `php artisan migrate`
+6. **Démarrez le serveur** : `php artisan serve`
+
+### Étapes pour Express
+
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/express`
+3. **Installez les dépendances** : `npm install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
+5. **Migrations** : `npx prisma migrate dev`
+6. **Démarrez le serveur** : `node app.js`
+
+### Étapes pour NestJS
+
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/nest`
+3. **Installez les dépendances** : `npm install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
+5. **Migrations** : `npx prisma migrate dev`
+6. **Démarrez le serveur** : `npm run start:dev`
+>>>>>>> f8b72b13645beffe16ae8092c0f06337f11e0767
 
 ---
 
@@ -95,16 +124,28 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 - **POST /api/login  -- /login** : Connexion d'un utilisateur (Retourne un token JWT)
 - **POST /api/register --  /register** : Inscription d'un nouvel utilisateur
 
-### Utilisateurs (Laravel et Express)
+### Déconnexion (Laravel et Express)
 
+- **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
+
+### Laravel
+
+- **POST /api/login** : Connexion d'un utilisateur (Retourne un token JWT)
+- **POST /api/register** : Inscription d'un nouvel utilisateur
 - **GET /api/users** : Liste de tous les utilisateurs
 - **POST /api/users** : Créer un nouvel utilisateur
 - **PUT /api/users/{id}** : Mettre à jour un utilisateur
 - **DELETE /api/users/{id}** : Supprimer un utilisateur
 
-### Déconnexion (Laravel et Express)
 
-- **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
+### Express
+
+- **POST /login** : Connexion d'un utilisateur (Retourne un token JWT)
+- **POST /register** : Inscription d'un nouvel utilisateur
+- **GET /users** : Liste de tous les utilisateurs
+- **POST /users** : Créer un nouvel utilisateur
+- **PUT /users/:id** : Mettre à jour un utilisateur
+- **DELETE /users/:id** : Supprimer un utilisateur
 
 ### NestJS (CRUD Simple)
 
