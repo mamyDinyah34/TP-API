@@ -1,6 +1,6 @@
-# CRUD API avec Authentification et PostgreSQL (Laravel, Express & NestJS) 🔐
+# CRUD API avec Authentification et PostgreSQL (Laravel, Express, NestJS & Spring Boot) 🔐
 
-Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentification par **JWT**, **PostgreSQL** comme base de données, et une documentation via **Swagger** (pour Laravel et Express). Il comprend trois parties : une implémentation avec **Laravel**, une avec **Express.js**, et une version simple avec **NestJS**.
+Ce TP est une **API CRUD** pour la gestion des utilisateurs avec authentification par **JWT**, **PostgreSQL** comme base de données, et une documentation via **Swagger** (pour Laravel et Express). Il comprend quatre parties : une implémentation avec **Laravel**, une avec **Express.js**, une version simple avec **NestJS**, et une version Spring Boot pour un CRUD simple.
 
 ---
 
@@ -10,6 +10,7 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 - **Authentification JWT** : Accès sécurisé via **JSON Web Tokens** pour les routes protégées.
 - **Documentation Swagger** : Documentation claire et interactive de l'API pour Laravel et Express.
 - **Base de données PostgreSQL** : Stockage fiable des utilisateurs et des informations.
+- **CRUD Simple avec Spring Boot** : Une implémentation simple du CRUD avec Spring Boot.
 
 ---
 
@@ -26,8 +27,9 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 - **Laravel (PHP)** : Framework PHP pour l'implémentation de l'API RESTful avec JWT.
 - **Express.js (Node.js)** : Framework minimaliste pour la création d'API avec Prisma.
 - **NestJS (Node.js)** : Framework moderne pour créer des applications Node.js efficaces et scalables.
+- **Spring Boot (Java)** : Framework Java pour la création de microservices et d'API RESTful.
 - **PostgreSQL** : Base de données relationnelle pour stocker les utilisateurs.
-- **Prisma** : ORM moderne pour Node.js et TypeScript.
+- **Prisma** : ORM moderne pour Node.js et TypeScript (utilisé avec Express et NestJS).
 - **Swagger** : Documentation de l'API (Laravel et Express).
 - **JWT** : Pour sécuriser les routes (Laravel et Express).
 
@@ -35,61 +37,10 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 
 ## Installation 🚀
 
-<<<<<<< HEAD
-### Étapes d'Installation 🔨
-
-Dans ce projet, vous trouverez trois dossiers : **Laravel**, **Express.js** et **NestJS**. Chaque implémentation a ses propres spécificités.
-
-**1. Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
-
-#### Laravel (API Complète avec JWT et Swagger)
-
-| **Étape** | **Commande/Action** |
-|------------|-------------------|
-| **Dossier** | `cd TP-CRUD-API/laravel` |
-| **Dépendances** | `composer install` |
-| **Base de données** | Dans `.env` :<br>```env
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=userlaravel
-DB_USERNAME=postgres
-DB_PASSWORD=your_password
-``` |
-| **Migrations** | `php artisan migrate` |
-| **Documentation** | `php artisan l5-swagger:generate` |
-| **Démarrage** | `php artisan serve` |
-| **Interface** | [http://localhost:8000/api/documentation](http://localhost:8000/api/documentation) |
-
-#### Express.js (API Complète avec JWT et Swagger)
-
-| **Étape** | **Commande/Action** |
-|------------|-------------------|
-| **Dossier** | `cd TP-CRUD-API/express` |
-| **Dépendances** | `npm install` |
-| **Base de données** | Dans `.env` :<br>```env
-DATABASE_URL="postgresql://postgres:your_password@localhost:5432/userexpress"
-``` |
-| **Migrations** | `npx prisma migrate dev` |
-| **Démarrage** | `node app.js` |
-| **Interface** | [http://localhost:5000/api/docs](http://localhost:5000/api/docs) |
-
-#### NestJS (API CRUD Simple)
-
-| **Étape** | **Commande/Action** |
-|------------|-------------------|
-| **Dossier** | `cd TP-CRUD-API/nest` |
-| **Dépendances** | `npm install` |
-| **Base de données** | Dans `.env` :<br>```env
-DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
-``` |
-| **Migrations** | `npx prisma migrate dev` |
-| **Démarrage** | `npm run start:dev` |
-| **Test** | Utilisez Postman ou Thunder Client |
-=======
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+   
 ### Étapes pour Laravel
 
-1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
 2. **Allez dans le dossier** : `cd TP-CRUD-API/laravel`
 3. **Installez les dépendances** : `composer install`
 4. **Configurez la base de données** : Modifiez le fichier `.env` avec les configurations PostgreSQL
@@ -98,7 +49,6 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 
 ### Étapes pour Express
 
-1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
 2. **Allez dans le dossier** : `cd TP-CRUD-API/express`
 3. **Installez les dépendances** : `npm install`
 4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
@@ -107,26 +57,26 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 
 ### Étapes pour NestJS
 
-1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
 2. **Allez dans le dossier** : `cd TP-CRUD-API/nest`
 3. **Installez les dépendances** : `npm install`
 4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
 5. **Migrations** : `npx prisma migrate dev`
 6. **Démarrez le serveur** : `npm run start:dev`
->>>>>>> f8b72b13645beffe16ae8092c0f06337f11e0767
 
----
+### Étapes pour Spring Boot
+
+2. **Allez dans le dossier Spring Boot** : `cd TP-CRUD-API/springboot`
+3. **Installez les dépendances** : `./mvnw clean install`
+4. **Configurez la base de données** : Modifiez le fichier `application.properties` avec les configurations PostgreSQL :
+   ```properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/userspring
+   spring.datasource.username=postgres
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.properties.hibernate.format_sql=true
+
 
 ## Routes API 📡
-
-### Authentification (Laravel et Express)
-
-- **POST /api/login  -- /login** : Connexion d'un utilisateur (Retourne un token JWT)
-- **POST /api/register --  /register** : Inscription d'un nouvel utilisateur
-
-### Déconnexion (Laravel et Express)
-
-- **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
 
 ### Laravel
 
@@ -136,6 +86,7 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 - **POST /api/users** : Créer un nouvel utilisateur
 - **PUT /api/users/{id}** : Mettre à jour un utilisateur
 - **DELETE /api/users/{id}** : Supprimer un utilisateur
+- **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
 
 
 ### Express
@@ -146,6 +97,7 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 - **POST /users** : Créer un nouvel utilisateur
 - **PUT /users/:id** : Mettre à jour un utilisateur
 - **DELETE /users/:id** : Supprimer un utilisateur
+- **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
 
 ### NestJS (CRUD Simple)
 
@@ -155,6 +107,14 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 - **PUT /users/:id** : Mettre à jour un utilisateur
 - **DELETE /users/:id** : Supprimer un utilisateur
 
+### Spring Boot (CRUD Simple)
+
+- **GET /users** : Liste de tous les utilisateurs
+- **GET /users/:id** : Obtenir un utilisateur spécifique
+- **POST /users** : Créer un nouvel utilisateur
+- **PUT /users/:id** : Mettre à jour un utilisateur
+- **DELETE /users/:id** : Supprimer un utilisateur
+  
 ---
 
 ## Sécurité 🔒
@@ -167,15 +127,15 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
 ## Tests des APIs 🧪
 
 ### Laravel et Express (avec Swagger)
-Une fois le serveur démarré, vous pouvez utiliser **Swagger UI** pour tester les différentes routes API de manière interactive. N'oubliez pas d'envoyer votre **token JWT** dans l'en-tête **Authorization** de vos requêtes (par exemple : `Bearer <token>`).
+Une fois le serveur démarré, vous pouvez utiliser **Swagger UI** pour tester les différentes routes API de manière interactive. N'oubliez pas d'envoyer votre **token JWT** dans l'en-tête **Authorization**.
 
-### NestJS (CRUD Simple)
-Pour tester l'API NestJS, vous pouvez utiliser des outils comme **cURL**, **Postman** ou **Thunder Client**. Les routes sont simples et ne nécessitent pas d'authentification.
+### NestJS & Spring Boot (CRUD Simple)
+Pour tester l'API NestJS et Spring Boot, vous pouvez utiliser des outils comme **cURL**, **Postman** ou **Thunder Client**. Les routes sont simples et ne nécessitent pas d'authentification.
 
 ## Différences entre les Implémentations 🔄
 
 - **Laravel & Express** : Implémentation complète avec authentification JWT et documentation Swagger.
-- **NestJS** : Version simple du CRUD, focalisée sur les opérations de base avec Prisma comme ORM.
+- **NestJS & Spring Boot** : Version simple du CRUD, focalisée sur les opérations de base avec Prisma(NestJS) ou JPA (Spring Boot) comme ORM.
 
 ---
 
