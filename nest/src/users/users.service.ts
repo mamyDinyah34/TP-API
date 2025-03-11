@@ -7,11 +7,11 @@ import * as bcrypt from 'bcryptjs';
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  async getAllUsers(): Promise<User[]> {
+  async allUsers(): Promise<User[]> {
     return this.prisma.user.findMany();
   }
 
-  async getUserById(id: number): Promise<User> {
+  async userById(id: number): Promise<User> {
     const user = await this.prisma.user.findUnique({
       where: { id }
     });

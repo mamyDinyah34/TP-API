@@ -7,13 +7,13 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  async getAllUsers(): Promise<User[]> {
-    return this.usersService.getAllUsers();
+  async allUsers(): Promise<User[]> {
+    return this.usersService.allUsers();
   }
 
   @Get(':id')
-  async getUserById(@Param('id') id: string): Promise<User> {
-    return this.usersService.getUserById(Number(id));
+  async userById(@Param('id') id: string): Promise<User> {
+    return this.usersService.userById(Number(id));
   }
 
   @Post()
