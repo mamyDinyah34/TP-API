@@ -24,76 +24,96 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Implémentation simple d'une API CRUD pour la gestion des utilisateurs avec [NestJS](https://github.com/nestjs/nest) et PostgreSQL.
 
-## Project setup
+## Fonctionnalités ✨
 
+- **CRUD Utilisateurs** : Opérations de base (Create, Read, Update, Delete)
+- **Base de données PostgreSQL** : Stockage des données utilisateur
+- **Prisma ORM** : Pour une gestion efficace de la base de données
+- **TypeScript** : Pour un code robuste et typé
+
+## Installation 🚀
+
+1. **Installez les dépendances** :
 ```bash
 $ npm install
 ```
 
-## Compile and run the project
+2. **Configurez la base de données** :
+Créez un fichier `.env` à la racine du projet avec :
+```env
+DATABASE_URL="postgresql://postgres:your_password@localhost:5432/usernest"
+```
 
+3. **Exécutez les migrations** :
 ```bash
-# development
-$ npm run start
+$ npx prisma migrate dev
+```
 
-# watch mode
+4. **Démarrez le serveur** :
+```bash
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Run tests
+## Routes API 📡
 
+### Utilisateurs
+
+- **GET /users** : Liste tous les utilisateurs
+- **GET /users/:id** : Récupère un utilisateur spécifique
+- **POST /users** : Crée un nouvel utilisateur
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "secret123"
+  }
+  ```
+- **PUT /users/:id** : Met à jour un utilisateur
+  ```json
+  {
+    "name": "John Updated",
+    "email": "john.updated@example.com"
+  }
+  ```
+- **DELETE /users/:id** : Supprime un utilisateur
+
+## Tests de l'API 🧪
+
+Vous pouvez tester l'API avec des outils comme :
+- [Postman](https://www.postman.com/)
+- [Thunder Client](https://www.thunderclient.com/) (extension VS Code)
+- [cURL](https://curl.se/)
+
+Exemple de requête avec cURL :
 ```bash
-# unit tests
-$ npm run test
+# Créer un utilisateur
+curl -X POST http://localhost:3000/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","password":"secret123"}'
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# Lister tous les utilisateurs
+curl http://localhost:3000/users
 ```
 
-## Deployment
+## Structure du Projet 📁
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
+```
+src/
+├── users/
+│   ├── users.controller.ts   # Contrôleur pour les routes
+│   └── users.service.ts      # Service pour la logique métier
+├── app.module.ts             # Module principal
+└── main.ts                   # Point d'entrée
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## Ressources Utiles 📚
 
-## Resources
+- [Documentation NestJS](https://docs.nestjs.com)
+- [Documentation Prisma](https://www.prisma.io/docs)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 
-Check out a few resources that may come in handy when working with NestJS:
+## Licence
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Ce projet est sous licence MIT.
