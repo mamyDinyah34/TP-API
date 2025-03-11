@@ -1,6 +1,6 @@
-# CRUD API avec Authentification et PostgreSQL (Laravel & Express) 🔐
+# CRUD API avec Authentification et PostgreSQL (Laravel, Express & NestJS) 🔐
 
-Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentification par **JWT**, **PostgreSQL** comme base de données, et une documentation via **Swagger**. Il comprend deux parties : une implémentation avec **Laravel** et une autre avec **Express.js**.
+Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentification par **JWT**, **PostgreSQL** comme base de données, et une documentation via **Swagger** (pour Laravel et Express). Il comprend trois parties : une implémentation avec **Laravel**, une avec **Express.js**, et une version simple avec **NestJS**.
 
 ---
 
@@ -15,7 +15,7 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 
 ## Capture d'Écran 📸
 
-| ![laravel](https://github.com/user-attachments/assets/6717c2dd-490b-4cf6-8867-0b18770babf3)| ![express](https://github.com/user-attachments/assets/4811b79f-1884-46cd-a042-abcf4d7a1899) |
+| ![laravel](https://github.com/user-attachments/assets/6717c2dd-490b-4cf6-8867-0b18770babf3) | ![express](https://github.com/user-attachments/assets/4811b79f-1884-46cd-a042-abcf4d7a1899) |
 |---|---|
 | Documentation Swagger pour Laravel | Documentation Swagger pour Express |
 
@@ -24,63 +24,74 @@ Ce projet est une **API CRUD** pour la gestion des utilisateurs avec authentific
 ## Langages et Technologies Utilisées 🛠️
 
 - **Laravel (PHP)** : Framework PHP pour l'implémentation de l'API RESTful avec JWT.
-- **Express.js (Node.js)** : Framework minimaliste pour la création d'API avec Prisma pour gérer la base de données.
+- **Express.js (Node.js)** : Framework minimaliste pour la création d'API avec Prisma.
+- **NestJS (Node.js)** : Framework moderne pour créer des applications Node.js efficaces et scalables.
 - **PostgreSQL** : Base de données relationnelle pour stocker les utilisateurs.
-- **Swagger** : Génération automatique de la documentation de l'API pour les deux environnements (Laravel & Express).
-- **JWT (JSON Web Token)** : Pour sécuriser les routes et gérer l'authentification des utilisateurs.
+- **Prisma** : ORM moderne pour Node.js et TypeScript.
+- **Swagger** : Documentation de l'API (Laravel et Express).
+- **JWT** : Pour sécuriser les routes (Laravel et Express).
 
 ---
 
 ## Installation 🚀
 
-### Étapes pour Laravel et Express
+### Étapes pour Laravel
 
-Dans ce projet, vous trouverez deux dossiers, un pour **Laravel** et un autre pour **Express.js**. Suivez les étapes d'installation pour chaque environnement.
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/laravel`
+3. **Installez les dépendances** : `composer install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` avec les configurations PostgreSQL
+5. **Migrations** : `php artisan migrate`
+6. **Démarrez le serveur** : `php artisan serve`
 
-| **Étapes**                                               | **Laravel et Express**                                         |
-|----------------------------------------------------------|---------------------------------------------------------------|
-| **1. Clonez ce dépôt**                                   | Clonez le dépôt depuis GitHub :                               |
-|                                                          |   https://github.com/mamyDinyah34/TP-API.git                  |
-| **2. Allez dans le dossier correspondant (Laravel ou Express)** |  - Pour Laravel : `cd TP-API/laravel`                         |
-|                                                          | - Pour Express : `cd TP-API/express`                         |
-| **3. Installez les dépendances**                         |  - Pour Laravel : `composer install`                          |
-|                                                          |  - Pour Express : `npm install`                               |
-| **4. Configurez la base de données PostgreSQL**          | Modifiez le fichier `.env` dans le dossier correspondant :     |
-|                                                          |   - Pour Laravel :                                              |
-|                                                          |     - `DB_CONNECTION=pgsql`                                    |
-|                                                          |     - `DB_HOST=127.0.0.1`                                      |
-|                                                          |     - `DB_PORT=5432`                                          |
-|                                                          |     - `DB_DATABASE=userlaravel`                                   |
-|                                                          |     - `DB_USERNAME=postgres`                                   |
-|                                                          |     - `DB_PASSWORD=your_password`                              |
-|                                                          |   - Pour Express : `DATABASE_URL="postgresql://postgres:your_password@localhost:5432/userexpress"` |
-| **5. Exécutez les migrations pour la base de données**   | - Pour Laravel : `php artisan migrate`                         |
-|                                                          | - Pour Express : `npx prisma migrate dev`                      |
-| **6. Générez la documentation Swagger**                  | - Pour Laravel : `php artisan l5-swagger:generate`             |
-| **7. Démarrez le serveur**                               | - Pour Laravel : `php artisan serve`                           |
-|                                                          | - Pour Express : ` node app.js`                                   |
-| **8. Accédez à la documentation Swagger**                | - Pour Laravel : [http://localhost:8000/api/documentation](http://localhost:8000/api/documentation) |
-|                                                          | - Pour Express : [http://localhost:5000/api/docs](http://localhost:5000/api/docs) |
+### Étapes pour Express
+
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/express`
+3. **Installez les dépendances** : `npm install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
+5. **Migrations** : `npx prisma migrate dev`
+6. **Démarrez le serveur** : `node app.js`
+
+### Étapes pour NestJS
+
+1. **Clonez ce dépôt** : `git clone https://github.com/mamyDinyah34/TP-CRUD-API.git`
+2. **Allez dans le dossier** : `cd TP-CRUD-API/nest`
+3. **Installez les dépendances** : `npm install`
+4. **Configurez la base de données** : Modifiez le fichier `.env` et définissez `DATABASE_URL`
+5. **Migrations** : `npx prisma migrate dev`
+6. **Démarrez le serveur** : `npm run start:dev`
 
 ---
 
 ## Routes API 📡
 
-### Authentification
+### Laravel
 
-- **POST /api/login  -- /login** : Connexion d'un utilisateur (Retourne un token JWT)
-- **POST /api/register --  /register** : Inscription d'un nouvel utilisateur
-
-### Utilisateurs
-
+- **POST /api/login** : Connexion d'un utilisateur (Retourne un token JWT)
+- **POST /api/register** : Inscription d'un nouvel utilisateur
 - **GET /api/users** : Liste de tous les utilisateurs
 - **POST /api/users** : Créer un nouvel utilisateur
 - **PUT /api/users/{id}** : Mettre à jour un utilisateur
 - **DELETE /api/users/{id}** : Supprimer un utilisateur
-
-### Déconnexion
-
 - **POST /logout** : Déconnexion de l'utilisateur (Invalidate le token JWT)
+
+### Express
+
+- **POST /login** : Connexion d'un utilisateur (Retourne un token JWT)
+- **POST /register** : Inscription d'un nouvel utilisateur
+- **GET /users** : Liste de tous les utilisateurs
+- **POST /users** : Créer un nouvel utilisateur
+- **PUT /users/:id** : Mettre à jour un utilisateur
+- **DELETE /users/:id** : Supprimer un utilisateur
+
+### NestJS (CRUD Simple)
+
+- **GET /users** : Liste de tous les utilisateurs
+- **GET /users/:id** : Obtenir un utilisateur spécifique
+- **POST /users** : Créer un nouvel utilisateur
+- **PUT /users/:id** : Mettre à jour un utilisateur
+- **DELETE /users/:id** : Supprimer un utilisateur
 
 ---
 
@@ -91,9 +102,18 @@ Dans ce projet, vous trouverez deux dossiers, un pour **Laravel** et un autre po
 
 ---
 
-## Tests avec Swagger 🧪
+## Tests des APIs 🧪
 
+### Laravel et Express (avec Swagger)
 Une fois le serveur démarré, vous pouvez utiliser **Swagger UI** pour tester les différentes routes API de manière interactive. N'oubliez pas d'envoyer votre **token JWT** dans l'en-tête **Authorization** de vos requêtes (par exemple : `Bearer <token>`).
+
+### NestJS (CRUD Simple)
+Pour tester l'API NestJS, vous pouvez utiliser des outils comme **cURL**, **Postman** ou **Thunder Client**. Les routes sont simples et ne nécessitent pas d'authentification.
+
+## Différences entre les Implémentations 🔄
+
+- **Laravel & Express** : Implémentation complète avec authentification JWT et documentation Swagger.
+- **NestJS** : Version simple du CRUD, focalisée sur les opérations de base avec Prisma comme ORM.
 
 ---
 
